@@ -19,11 +19,12 @@ class TitleFragment : Fragment() {
     private lateinit var titleFragmentBinding: FragmentTitleBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         titleFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
-        titleFragmentBinding.playButton.setOnClickListener {
-            // Navigation.findNavController(it).navigate(R.id.action_titleFragment_to_gameFragment)
-            // it.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
-            Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
-        }
+        /*titleFragmentBinding.playButton.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_titleFragment_to_gameFragment)
+            it.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+        }*/
+
+        titleFragmentBinding.playButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment))
         return titleFragmentBinding.root
     }
 }
